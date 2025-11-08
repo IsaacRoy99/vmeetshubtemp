@@ -44,6 +44,23 @@ a {
   background-position: center center;
   background-repeat: no-repeat; }
 
+.slide-text {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  animation: fadeSlide 9s infinite;
+}
+
+.slide-text:nth-child(1) { animation-delay: 0s; }
+.slide-text:nth-child(2) { animation-delay: 3s; }
+.slide-text:nth-child(3) { animation-delay: 6s; }
+
+@keyframes fadeSlide {
+  0%, 20% { opacity: 0; transform: translateY(30px); }
+  25%, 45% { opacity: 1; transform: translateY(0); }
+  50%, 100% { opacity: 0; transform: translateY(-30px); }
+}
+
 /* Header */
 header {
   position: absolute;
