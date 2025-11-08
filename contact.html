@@ -104,6 +104,49 @@
 		</div>
 	</section>
 
+	<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // prevent the form from submitting normally
+
+  // Collect form values
+  const datetime = document.getElementById('datetime').value;
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+
+  if (!datetime || !name || !phone) {
+    alert("Please fill in all fields before making a reservation.");
+    return;
+  }
+
+  // South Africa country code
+  const countryCode = '+27';
+  const formattedPhone = phone.startsWith('0') 
+      ? countryCode + phone.substring(1) 
+      : countryCode + phone;
+
+  // Branded WhatsApp message
+  const message = 
+`Hi ${name} 👋,
+This is *Vape Meets Hubbly* 💨
+
+Your reservation for *${datetime}* has been received.
+We’ll confirm shortly and can’t wait to chill with you 😎🍹
+
+See you soon!
+#VapeMeetsHubbly`;
+
+  // WhatsApp link
+  const whatsappURL = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
+
+  // Open WhatsApp in a new tab/app
+  window.open(whatsappURL, '_blank');
+
+  // Optional: reset the form
+  document.getElementById('contactForm').reset();
+});
+</script>
+	
+
 	<script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -112,4 +155,5 @@
 
 	</body>
 </html>
+
 
