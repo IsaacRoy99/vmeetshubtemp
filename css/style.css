@@ -182,60 +182,81 @@ h1 {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+/* SHOP PRODUCTS FIXED LAYOUT */
 .cards {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  justify-content: center; /* Centers the row */
+  align-items: stretch; /* Equal card height alignment */
+  gap: 1.5rem; /* Uniform spacing between cards */
+  padding: 2rem 1rem;
 }
 
 .cards_item {
+  flex: 1 1 280px; /* Responsive card width */
+  max-width: 300px; /* Prevent overly wide cards */
   display: flex;
-  padding: 1rem;
-}
-
-@media (min-width: 40rem) {
-  .cards_item {
-    width: 50%;
-  }
-}
-
-@media (min-width: 56rem) {
-  .cards_item {
-    width: 33.3333%;
-  }
+  justify-content: center;
 }
 
 .card {
-  background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+}
+
+.card_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.card_image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .card_content {
   padding: 1rem;
   background: linear-gradient(to bottom left, #2a2929 40%, #1d1d1d 100%);
+  flex-grow: 1;
 }
 
 .card_title {
-  color: #ffffff;
+  color: #fff;
   font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 0px;
+  margin-bottom: 0.5rem;
 }
 
 .card_text {
-  color: #ffffff;
-  font-size: 0.875rem;
+  color: #fff;
+  font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 1.25rem;    
-  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  color: #fff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #007bff;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 .made_by{
   font-weight: 400;
